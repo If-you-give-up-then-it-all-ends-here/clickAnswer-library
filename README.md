@@ -60,7 +60,15 @@ LP側ですること
 1. 選択された後のスタイルをcssに追加する　
 (クラス名は何でもよい)
 
-2. 質問ごとにいくつか答があるが、その質問ごとの答えのタグに同じクラス属性を追加する。    
+ ```bash
+.クラス名{
+   background-color: #ffaf00;
+   color: #fff;
+   ...
+}
+ ```
+
+3. 質問ごとにいくつか答があるが、その質問ごとの答えのタグに同じクラス属性を追加する。    
 (例) 
 ```bash
 <!-- question1 -->
@@ -120,7 +128,7 @@ const グローバル変数 = document.querySelectorAll(".クラス名")
 2. 関数呼び出し  
  
 ```bash
-ClickAnswerLibrary.changeAnswerImg(グローバル変数, 選択できる数(数字で),選択された後のスタイルを追加したクラス名 )
+ClickAnswerLibrary.changeAnswerImg(グローバル変数, 選択できる数(数字で), 選択された後のスタイルを追加したクラス名 )
 ```
        
  
