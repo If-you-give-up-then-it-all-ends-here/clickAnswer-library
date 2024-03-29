@@ -77,12 +77,12 @@ LP側ですること
     <div class="answer1_container absolute">
         <div class="answer1_box">
             <div class="flex">
-                <div class="answer js_a1">ほぼない</div>
-                <div class="answer js_a1">30分ほど</div>
+                <div class="answer クラス名１">ほぼない</div>
+                <div class="answer クラス名１">30分ほど</div>
             </div>
             <div class="flex">
-                <div class="answer js_a1">60分ほど</div>
-                <div class="answer js_a1">1日使える</div>
+                <div class="answer クラス名１">60分ほど</div>
+                <div class="answer クラス名１">1日使える</div>
             </div>
         </div>
     </div>
@@ -94,12 +94,12 @@ LP側ですること
     <p><img src="img/ls_05.png" alt=""></p>
     <div class="answer2_container absolute">
         <div class="answer2_box">     
-            <div class="answer js_a2">メッセージアプリ(LINEなど)</div>
-            <div class="answer js_a2">SNS(Instagramなど)</div>
-            <div class="answer js_a2">動画視聴(YouTubeなど)</div>
-            <div class="answer js_a2">ショッピング(Amazonなど)</div>
-            <div class="answer js_a2">ネットサーフィン</div>
-            <div class="answer js_a2">アプリゲーム</div>
+            <div class="answer クラス名2">メッセージアプリ(LINEなど)</div>
+            <div class="answer クラス名2">SNS(Instagramなど)</div>
+            <div class="answer クラス名2">動画視聴(YouTubeなど)</div>
+            <div class="answer クラス名2">ショッピング(Amazonなど)</div>
+            <div class="answer クラス名2">ネットサーフィン</div>
+            <div class="answer クラス名2">アプリゲーム</div>
         </div>
     </div>
 </div>
@@ -132,23 +132,4 @@ ClickAnswerLibrary.changeAnswerImg(グローバル変数, 選択できる数(数
 ```
        
  
-# Note
- 
-注意点などがあれば書く
- 
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
- 
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
+
