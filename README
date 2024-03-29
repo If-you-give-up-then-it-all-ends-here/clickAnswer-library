@@ -1,77 +1,53 @@
 # changeImg-library(LP用)
 
-副業ナビ系のLPで画像の切り替え処理をするライブラリ
+アンケート系LPで選択箇所が画像ではないときのライブラリ。 
  
 # DEMO
 index.php
 
 ```bash
-<div class="q1 relative questions">
-   <p><img src="img/nabi_a_01.png"></p>
-   <div class="absolute answer1 flex">
-       <p><img src="img/nabi_a_c_1.png" class="a1"></p>
-       <p><img src="img/nabi_a_c_2.png" class="a1"></p>
-   </div>
+<div class="relative q1_container" id="question">
+    <p><img src="img/ls_04.png" alt=""></p>
+    <div class="answer1_container absolute">
+        <div class="answer1_box">
+            <div class="flex">
+                <div class="answer js_a1">ほぼない</div>
+                <div class="answer js_a1">30分ほど</div>
+            </div>
+            <div class="flex">
+                <div class="answer js_a1">60分ほど</div>
+                <div class="answer js_a1">1日使える</div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="padding_t40"></div>
-<div class="q2 relative questions">
-   <p><img src="img/nabi_a_02.png"></p>
-   <div class="absolute answer2">
-       <div class="flex">
-           <p ><img src="img/nabi_a_02_1.png" class="a2"></p>
-           <p ><img src="img/nabi_a_02_2.png" class="a2"></p>
-       </div>
-       <div class="flex">
-           <p><img src="img/nabi_a_02_3.png" class="a2"></p>
-           <p><img src="img/nabi_a_02_4.png" class="a2"></p>
-       </div>
-       <div class="flex2 margin_auto">
-           <p class="c margin_auto"><img src="img/nabi_a_02_5.png" class="a2"></p>
-       </div>
-   </div>
-</div>
-<div class="padding_t40"></div>
-<div class="q3 relative questions">
-   <p><img src="img/nabi_a_03.png"></p>
-   <div class="absolute answer3">
-       <div class="flex">
-           <p><img src="img/nabi_a_03_1.png" class="a3"></p>
-           <p><img src="img/nabi_a_03_2.png" class="a3"></p>
-       </div>
-       <div class="flex">
-           <p><img src="img/nabi_a_03_3.png" class="a3"></p>
-           <p><img src="img/nabi_a_03_4.png" class="a3"></p>
-       </div>
-   </div>
-</div>
-<div class="padding_t40"></div>
-<div class="q4 relative questions">
-   <p><img src="img/nabi_a_04.png"></p>
-   <div class="absolute answer4">
-       <div class="flex">
-           <p><img src="img/nabi_a_04_1.png" class="a4"></p>
-           <p><img src="img/nabi_a_04_2.png" class="a4"></p>
-       </div>
-       <div class="flex">
-           <p><img src="img/nabi_a_03_3.png" class="a4"></p>
-           <p><img src="img/nabi_a_02_5.png" class="a4"></p>
-       </div>
-   </div>
+<div class="relative q2_container">
+    <p><img src="img/ls_05.png" alt=""></p>
+    <div class="answer2_container absolute">
+        <div class="answer2_box">     
+            <div class="answer js_a2">メッセージアプリ(LINEなど)</div>
+            <div class="answer js_a2">SNS(Instagramなど)</div>
+            <div class="answer js_a2">動画視聴(YouTubeなど)</div>
+            <div class="answer js_a2">ショッピング(Amazonなど)</div>
+            <div class="answer js_a2">ネットサーフィン</div>
+            <div class="answer js_a2">アプリゲーム</div>
+        </div>
+    </div>
 </div>
 ```
 
  ```bash
-<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.0/dist/index.js"></script>
 <script>
-    const answers1 = document.querySelectorAll(".a1")
-    const answers2 = document.querySelectorAll(".a2")
-    const answers3 = document.querySelectorAll(".a3")
-    const answers4 = document.querySelectorAll(".a4")
-
-    changeImgLibrary.changeAnswerImg(answers1, false, "png")
-    changeImgLibrary.changeAnswerImg(answers2, true, "png", 2)
-    changeImgLibrary.changeAnswerImg(answers3, false, "png")
-    changeImgLibrary.changeAnswerImg(answers4, false, "png")
+   const answers1 = document.querySelectorAll(".js_a1")
+   const answers2 = document.querySelectorAll(".js_a2")
+   const answers3 = document.querySelectorAll(".js_a3")
+   
+   
+   ClickAnswerLibrary.changeAnswerImg(answers1, 1)
+   ClickAnswerLibrary.changeAnswerImg(answers1, 1)
+   ClickAnswerLibrary.changeAnswerImg(answers2, 6)
+   ClickAnswerLibrary.changeAnswerImg(answers3, 1)
 </script>
  ```
 
@@ -81,38 +57,41 @@ index.php
  
 LP側ですること
 
-1. 画像の名前を変更する  
-   (例)    
-   選択する前の画像 -> nabi_a_04.png  
-   選択後の画像 -> nabi_a_04_after.png　(afterを最後につけ加える)
+1. 選択された後のスタイルをcssに追加する　
+(クラス名は何でもよい)
 
-2. 質問ごとにいくつか答えの画像があるが、その質問ごとの答えのimgタグに同じクラス属性を追加する。    
+2. 質問ごとにいくつか答があるが、その質問ごとの答えのタグに同じクラス属性を追加する。    
 (例) 
 ```bash
 <!-- question1 -->
-<div class="q1 relative questions">
-    <p><img src="img/nabi_a_01.png"></p>
-    <div class="absolute answer1 flex">
-        <p><img src="img/nabi_a_c_1.png" class="a1"></p>
-        <p><img src="img/nabi_a_c_2.png" class="a1"></p>
+<div class="relative q1_container" id="question">
+    <p><img src="img/ls_04.png" alt=""></p>
+    <div class="answer1_container absolute">
+        <div class="answer1_box">
+            <div class="flex">
+                <div class="answer js_a1">ほぼない</div>
+                <div class="answer js_a1">30分ほど</div>
+            </div>
+            <div class="flex">
+                <div class="answer js_a1">60分ほど</div>
+                <div class="answer js_a1">1日使える</div>
+            </div>
+        </div>
     </div>
 </div>
 
 
 <!-- question2 -->
-<div class="q2 relative questions">
-    <p><img src="img/nabi_a_02.png"></p>
-    <div class="absolute answer2">
-        <div class="flex">
-            <p ><img src="img/nabi_a_02_1.png" class="a2"></p>
-            <p ><img src="img/nabi_a_02_2.png" class="a2"></p>
-        </div>
-        <div class="flex">
-            <p><img src="img/nabi_a_02_3.png" class="a2"></p>
-            <p><img src="img/nabi_a_02_4.png" class="a2"></p>
-        </div>
-        <div class="flex2 margin_auto">
-            <p class="c margin_auto"><img src="img/nabi_a_02_5.png" class="a2"></p>
+<div class="relative q2_container">
+    <p><img src="img/ls_05.png" alt=""></p>
+    <div class="answer2_container absolute">
+        <div class="answer2_box">     
+            <div class="answer js_a2">メッセージアプリ(LINEなど)</div>
+            <div class="answer js_a2">SNS(Instagramなど)</div>
+            <div class="answer js_a2">動画視聴(YouTubeなど)</div>
+            <div class="answer js_a2">ショッピング(Amazonなど)</div>
+            <div class="answer js_a2">ネットサーフィン</div>
+            <div class="answer js_a2">アプリゲーム</div>
         </div>
     </div>
 </div>
@@ -123,29 +102,25 @@ LP側ですること
  
 1. npm使用する場合
  ```bash
- npm i changeImg-library
+ npm i clickAnswer-library
  ```
 2. CDNで使用する場合
  ```bash
- <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/changeImg-library@v1.0.4/dist/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.0/dist/index.js"></script>
  ```
  
 # Usage
  
-1. グローバル変数を設定する(imgタグに追加したクラスを指定する)
+1. グローバル変数を設定する(答えのタグに追加したクラスを指定する)
  
 ```bash
 const グローバル変数 = document.querySelectorAll(".クラス名")
 ```
 
 2. 関数呼び出し  
-   a). ひとつの答えのみ選択できる場合
-  ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, false、画像拡張子)
-```
-b). 複数の答えが選択できる場合
-  ```bash
-changeImgLibrary.changeAnswerImg(グローバル変数, true, 選択できる数, 画像拡張子)
+ 
+```bash
+ClickAnswerLibrary.changeAnswerImg(グローバル変数, 選択できる数(数字で),選択された後のスタイルを追加したクラス名 )
 ```
        
  
