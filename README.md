@@ -37,7 +37,7 @@ index.php
 ```
 
  ```bash
-<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.3/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.4/dist/index.js"></script>
 <script>
    const answers1 = document.querySelectorAll(".js_a1")
    const answers2 = document.querySelectorAll(".js_a2")
@@ -114,7 +114,7 @@ LP側ですること
  ```
 2. CDNで使用する場合
  ```bash
- <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.3/dist/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/gh/If-you-give-up-then-it-all-ends-here/clickAnswer-library@v1.0.4/dist/index.js"></script>
  ```
  
 # Usage
